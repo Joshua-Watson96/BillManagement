@@ -14,7 +14,7 @@ const subcategoryData = [
         category_id: 1,
     },
     {
-        subcategory_name: 'Morgage',
+        subcategory_name: 'Mortgage',
         category_id: 1,
     },
     {
