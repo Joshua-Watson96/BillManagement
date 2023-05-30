@@ -1,7 +1,18 @@
 // require router with express
 const router = require('express').Router()
 // get the bill information from bill
-const Bill = require('../../models/Bill')
+const Bill = require('../../models')
+
+// GET request Test
+router.get('/', async (req, res) => {
+    try {
+        const bills = await Bill.findAll();
+        res.status(200).json(bills);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+}
+)
 
 // Edit a bill
 router.put('/:id', async (req, res) => {
