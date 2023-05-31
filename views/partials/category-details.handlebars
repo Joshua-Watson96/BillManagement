@@ -1,0 +1,10 @@
+<section class="card" style="width: 18rem;">
+    {{#if bills}}
+    <div class="card-header">
+        {{category_name}}
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{bills.[0].name}} ${{bills.[0].amount}}</li>
+    </ul>
+    {{/if}}
+</section>
