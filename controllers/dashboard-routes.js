@@ -1,17 +1,14 @@
 const router = require('express').Router();
 const { Bill, Category } = require('../models');
 
-// router.get('/dashboard', (req, res) => {
-//     res.render('dashboard')
-// });
-
+//Get all categories and associated bills
 router.get('/dashboard', async (req, res) => {
     try {
         const categoryData = await Category.findAll({
             include: [
                 {
                     model: Bill,
-                    attributes: ['name', 'amount'],
+                    attributes: ['name', 'amount', 'due_date'],
                 },
             ],
         });
@@ -19,7 +16,16 @@ router.get('/dashboard', async (req, res) => {
             category.get({ plain: true })
         );
 
-        res.render('dashboard', { categories });
+        const billData = await Bill.findAll({
+            order: [
+                ["due_date", 'ASC']
+            ]
+        });
+        const bills = billData.map((bill) =>
+            bill.get({ plain: true })
+        );
+
+        res.render('dashboard', { categories, bills });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

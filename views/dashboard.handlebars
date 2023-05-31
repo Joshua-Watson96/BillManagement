@@ -1,3 +1,19 @@
-{{#each categories as |category|}}
-{{> category-details}}
-{{/each}}
+<section id="categories">
+    <canvas id="myChart"></canvas>
+
+    <section id="category-card">
+        <h2>Categories</h2>
+        {{#each categories as |category|}}
+        {{> category-details}}
+        {{/each}}
+    </section>
+</section>
+
+<div id="line-break"></div>
+
+<section id="bill-card">
+    <h2>Upcomming Bills</h2>
+    {{#each bills as |bill|}}
+    {{> bill-details}}
+    {{/each}}
+</section>
