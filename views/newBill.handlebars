@@ -1,0 +1,31 @@
+{{!-- New Bill Form --}}
+<div = "newBill">
+    <form action="/addNewBill" method="POST">
+        {{!-- Prompts user to enter the name of the bill --}} 
+        <label for="billName">What bill would you like to add?</label>
+        <input type = "billNameTxt" id = "billNameId" required>
+        {{!-- Prompts user to enter the type of bill --}}
+        <label for="billType"> Select type of bill </label>
+        <select id ="billTypeId" required>
+            <option value="electricity">Electricity</option>
+            <option value="gas">Gas</option>
+            <option value="water">Water</option>
+            <option value="internet">Internet</option>
+            <option value="homeInsurance">Home Insurance</option>
+            <option value="carInsurance">Car Insurance</option>
+            <option value="carRego">Car Registration</option>
+            <option value="phone">Phone bill</option>
+            <option value="schoolFee">School Fee</option>
+            <option value="councilRates">Council Rates</option>
+            
+
+        {{!-- Prompts user to enter bill amount --}}
+        <label for="billAmount">How much is the bill?</label>
+        <input type = "billAmountTxt" id = "billAmountId" required>
+        {{!-- Prompts user to enter bill due-date --}}
+        <label for = "billDue">What is the due-date for this bill?</label>
+        <input type = "billDueTxt" id = "billDueId" required>
+        
+    </form>
+
+</div>

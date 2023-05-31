@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
-
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
@@ -19,5 +18,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// router.get('/', (req, res) => {
+//     res.render('login')
+// });
+
+router.get('/signup', (req, res) => {
+    res.render('signUp')
+});
 
 module.exports = router;

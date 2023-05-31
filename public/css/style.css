@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background-color: #66BA06;
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+#header-text {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    background-color: #EBFFE5;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+}
+
+li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.78);
+}
+
+li {
+    padding-bottom: 2rem;
+    padding-left: 0.8rem;
+}
+
+li:first-child {
+    padding-top: 1rem;
+}
+
+main {
+    margin-left: 12%;
+    margin-right: 2%;
+}
+
+.slogan {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+}
+
+form {
+    background-color: #66BA06;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+input, #submit, form {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.079) 2.4px 2.4px 3.2px;
+}
+
+#submit {
+    font-size: 25px;
+    margin-top: 1rem;
+}
+
+.redirection {
+    padding-right: 0.8rem;
+    text-align: end;
+}
+
+#bill {
+    display: flex;
+    justify-content: space-between;
+}
+
+#line-break {
+    border-bottom: 2px solid black;
+    padding-top: 3rem;
+}
+
+#category-card {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#bill-card {
+    padding-top: 3rem;
+}
+
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#myChart {
+    max-height: 40vh;
+    max-width: 40vw;
+}

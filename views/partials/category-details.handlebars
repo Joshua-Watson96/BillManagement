@@ -1,0 +1,12 @@
+<div class="card" style="width: 30rem;">
+    {{#if bills}}
+    <div class="card-header">
+    <strong>{{category_name}}</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" id="bill">
+            <span>{{bills.[0].name}}</span> <span>${{bills.[0].amount}}</span> <span>Due: {{bills.[0].due_date}}</span>
+            </li>
+    </ul>
+    {{/if}}
+</div>
