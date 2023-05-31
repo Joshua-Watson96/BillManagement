@@ -12,15 +12,21 @@
 
 <body>
     <header>
-        <h1 id="header">Bill Manager</h1>
+        <h1 id="header-text">Bill Manager</h1>
     </header>
     <nav class="nav">
         <ul id="nav-list">
             <li>
-                <a href="#">Home</a>
+                <!-- If the user is logged in, show a logout button -->
+                {{#if loggedIn}}
+                <button id="home" class="btn-no-style">Home</button>
+                {{else}}
+                <!-- Otherwise, show a link to login -->
+                <a href="/">Login</a>
+                {{/if}}
             </li>
-            <li>
-                <a href="#">Dashboard</a>
+            <li id = "dashboardBtn">
+                <a href="/dashboard">Dashboard</a>
             </li>
             <li>
                 <a href="#">Bills</a>
@@ -35,5 +41,31 @@
         {{{body}}}
     </main>
 </body>
+
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 
 </html>
