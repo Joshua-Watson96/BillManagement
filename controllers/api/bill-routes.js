@@ -3,6 +3,17 @@ const { Bill} = require('../../models');
 
 //Endpoint '/api/bills'
 
+//Get all bills
+router.get('/', async (req, res) => {
+    try {
+        const billData = await Bill.findAll();
+        res.status(200).json(billData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 //Create bill
 router.post('/', async (req, res) => {
     try {
@@ -15,6 +26,24 @@ router.post('/', async (req, res) => {
             user_id: req.body.user_id
         });
         res.status(200).json(newBill);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//Update bill by id
+router.put('/:id', async (req, res) => {
+    try {
+        const billData = await Bill.update(req.body, {
+            where: {
+                id: req.params.id,
+            },
+        });
+        if (!billData[0]) {
+            res.status(404).json({ message: 'No bill with this id!' });
+            return;
+        }
+        res.status(200).json(billData);
     } catch (err) {
         res.status(500).json(err);
     }
