@@ -3,20 +3,28 @@
     <form action="/addNewBill" method="POST">
         {{!-- Prompts user to enter the name of the bill --}} 
         <label for="billName">What bill would you like to add?</label>
+        <select id ="billNameId" required>
+            <option value="utilities">Utilities</option>
+            <option value="insurance">Insurance</option>
+            <option value="personal">Personal</option>
+            <option value="education">Education</option>
+            <option value="council">Council</option>
+        </select>
         <input type = "billNameTxt" id = "billNameId" required>
         {{!-- Prompts user to enter the type of bill --}}
         <label for="billType"> Select type of bill </label>
         <select id ="billTypeId" required>
-            <option value="electricity">Electricity</option>
-            <option value="gas">Gas</option>
-            <option value="water">Water</option>
-            <option value="internet">Internet</option>
-            <option value="homeInsurance">Home Insurance</option>
-            <option value="carInsurance">Car Insurance</option>
-            <option value="carRego">Car Registration</option>
-            <option value="phone">Phone bill</option>
-            <option value="schoolFee">School Fee</option>
-            <option value="councilRates">Council Rates</option>
+            <option value="electricity" id="utilitiesId">Electricity</option>
+            <option value="gas" id="utilitiesId">Gas</option>
+            <option value="water" id="utilitiesId">Water</option>
+            <option value="internet" id="utilitiesId">Internet</option>
+            <option value="homeInsurance" id="insuranceId">Home Insurance</option>
+            <option value="carInsurance" id="insuranceId">Car Insurance</option>
+            <option value="carRego" id="personalId">Car Registration</option>
+            <option value="phone" id="personalId">Phone bill</option>
+            <option value="schoolFee" id="educationId">School Fee</option>
+            <option value="councilRates" id="councilId">Council Rates</option>
+            <option value="petRego" id="councilId">Pet Registration</option>
             
 
         {{!-- Prompts user to enter bill amount --}}
