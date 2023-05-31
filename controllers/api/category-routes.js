@@ -3,6 +3,17 @@ const { Category } = require('../../models');
 
 //Endpoint '/api/categories'
 
+//Get all categories
+router.get('/', async (req, res) => {
+    try {
+        const categoryData = await Category.findAll();
+        res.status(200).json(categoryData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
+
 //Create categories
 router.post('/', async (req, res) => {
     try {
