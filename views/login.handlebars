@@ -3,7 +3,7 @@
     <h2 class="slogan"> Streamline your Billing Process with Ease</h2>
     <div class = "login-container">
         {{!-- Landing page heading --}}
-        <form action="/login" method="POST">
+        <form action="/users/login" method="POST" class="login-form">
             {{!-- Prompts user to enter their name --}}
             <label for="name">Username:</label>
             <input type="text" id="name" name="name" required>
@@ -23,3 +23,5 @@
 
     </div>
 </section>
+
+<script src="./js/login.js"></script>

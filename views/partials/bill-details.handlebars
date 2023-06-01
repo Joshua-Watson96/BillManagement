@@ -1,10 +1,28 @@
-<section id="upcomming">
-    
-<div class="card" style="width: 40rem;">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="bill">
-            <span>{{name}}</span> <span>${{amount}}</span> <span>Due: {{due_date}}</span>
-        </li>
-    </ul>
-</div>
+
+
+<section id="upcomming">   
+    <div class="card" style="width: 40rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" class="bill">
+                {{{upcomingIcon}}}
+                <span>{{name}}</span> 
+                <span>${{amount}}</span> 
+                <span>Due: {{due_date}}</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<section id="all-bills">
+    <div class="card" style="width: 40rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" class="bill">
+                {{{getIcon}}}
+                <span>{{bill.name}}</span> 
+                <span>${{amount}}</span>
+                <span>Due: {{due_date}}</span>
+            </li>
+        </ul>
+    </div>
 </section>
