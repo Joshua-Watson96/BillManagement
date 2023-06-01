@@ -3,8 +3,8 @@
 
     <section id="category-card">
         <h2>Categories</h2>
-        {{#each categories as |category|}}
-        {{> category-details}}
+        {{#each categoryTotals as |category|}}
+        {{> category-sum}}
         {{/each}}
     </section>
 </section>
@@ -17,3 +17,34 @@
     {{> bill-details}}
     {{/each}}
 </section>
+
+<input type="hidden" id="thingIWant" value={{categoryNames}} />
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    var categoryNames = document.getElementById("thingIWant").value;
+
+    console.log(categoryNames.split(','));
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [{{ totalAmounts }}],
+                borderWidth: 1
+            }],
+            labels: categoryNames.split(','),
+            {{!-- labels: ['Home', 'Car', 'Insurance'], --}}
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

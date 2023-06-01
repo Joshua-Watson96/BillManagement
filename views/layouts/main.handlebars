@@ -29,10 +29,10 @@
                 <a href="/dashboard">Dashboard</a>
             </li>
             <li>
-                <a href="#">Bills</a>
+                <a href="/bills">Bills</a>
             </li>
             <li>
-                <a href="#">Categories</a>
+                <a href="/categories">Categories</a>
             </li>
         </ul>
     </nav>
@@ -41,31 +41,5 @@
         {{{body}}}
     </main>
 </body>
-
-<script src="/js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
 
 </html>

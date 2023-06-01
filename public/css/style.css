@@ -106,3 +106,7 @@ input, #submit, form {
     max-height: 40vh;
     max-width: 40vw;
 }
+
+#category-sum {
+    margin: 0.5rem 0 0.5rem 0;
+}
