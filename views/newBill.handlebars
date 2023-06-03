@@ -3,21 +3,32 @@
     <form action="/addNewBill" method="POST">
         {{!-- Prompts user to enter the name of the bill --}} 
         <label for="billName">What bill would you like to add?</label>
-        <input type = "billNameTxt" id = "billNameId" required>
+        <select id = "billTypeId" required>
+            <option value="homeVal" id="homeType">Home </option>
+            <option value="insuranceVal" id="insuranceType">Insurance </option>
+            <option value="personalVal" id="personalType">Personal </option>
+            <option value="educationVal" id="educationType ">Education </option>
+            <option value="councilVal" id="councilType">Council </option>
+        </select>
         {{!-- Prompts user to enter the type of bill --}}
         <label for="billType"> Select type of bill </label>
         <select id ="billTypeId" required>
-            <option value="electricity">Electricity</option>
-            <option value="gas">Gas</option>
-            <option value="water">Water</option>
-            <option value="internet">Internet</option>
-            <option value="healthInsurance">Health Insurance</option>
-            <option value="homeInsurance">Home Insurance</option>
-            <option value="carInsurance">Car Insurance</option>
-            <option value="carRego">Car Registration</option>
-            <option value="phone">Phone bill</option>
-            <option value="schoolFee">School Fee</option>
-            <option value="councilRates">Council Rates</option>
+
+            <option value="electricity" id="homeId">Electricity</option>
+            <option value="gas" id="homeId">Gas</option>
+            <option value="water" id="homeId">Water</option>
+            <option value="internet" id="homeId">Internet</option>
+            <option value="healthInsurance" id="insuranceId">Health Insurance</option>
+            <option value="homeInsurance" id="insuranceId">Home Insurance</option>
+            <option value="carInsurance" id="insuranceId">Car Insurance</option>
+            <option value="carRego" id="personalId">Car Registration</option>
+            <option value="phone" id="personalId">Phone bill</option>
+            <option value="schoolFee" id="educationId">School Fee</option>
+            <option value="councilRates" id="councilId">Council Rates</option>
+            <option value="dogRego" id="councilId">Dog Registration </option>
+        
+        </select>
+
             
 
         {{!-- Prompts user to enter bill amount --}}
@@ -28,5 +39,5 @@
         <input type = "billDueTxt" id = "billDueId" required>
         
     </form>
-
+<script src="../public/js/newBill.js"></script>
 </div>
