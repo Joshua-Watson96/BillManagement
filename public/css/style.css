@@ -1,6 +1,7 @@
 :root {
-  --green: #66b907;
-  --purple: rgb(197, 124, 206);
+  --main-color: #3ec1d3;
+  --seconday-color: #C7FAFF;
+  --tertiary-color: #29a4b5;
 }
 
 * {
@@ -10,35 +11,54 @@
   font-size: 18px;
 }
 
-/* main.handlebars */
+main {
+  margin-left: 16%;
+  margin-right: 2%;
+  margin-top: 120px;
+}
+
+/* header */
 
 header {
-  background-color: var(--green);
+  background-color: var(--main-color);
   text-align: start;
-  padding: 0.5rem 0 0.5rem 0;
-}
-
-#header-text {
-  font-size: 4.5em;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  color: white;
   margin: 0;
-  margin-left: 0.5em;
-  /* padding: 0; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2 !important;
 }
 
-#header-text::after {
-  content: "ease";
-  color: var(--purple);
+#logo {
+  width: 15%;
+  height: auto;
+  margin-left: 1rem;
+  padding: 0;
+  display: inline;
+}
+
+.slogan {
+  color: black;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  margin-top: 0.5em;
+}
+
+/* navbar */
+
+nav {
+  z-index: 1 !important;
 }
 
 #nav-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 12%;
-  background-color: #b1eb6f;
+  padding-top: 5rem;
+  width: 14%;
+  background-color: var(--seconday-color);
   height: 100%;
   position: fixed;
   overflow: auto;
@@ -53,20 +73,18 @@ li a {
 }
 
 li a:hover {
-  background-color: var(--purple);
   color: black;
   cursor: grab;
 }
 
 li {
   padding: 5em auto 2em 1.3em;
-  background-color: white;
   margin: 1.3em 0.8em;
   border-radius: 7px;
 }
 
 li:hover {
-  background-color: var(--purple);
+  color: black;
   cursor: grab;
 }
 
@@ -74,23 +92,10 @@ li:first-child {
   margin-top: 2em;
 }
 
-main {
-  margin-left: 14%;
-  margin-right: 2%;
-}
-
-.slogan {
-  color: var(--purple);
-  font-style: italic;
-  text-align: center;
-  padding: 2rem 0 1rem 0;
-  margin-top: 0.5em;
-}
-
 /* login and signup */
 
 form {
-  background-color: var(--green);
+  background-color: var(--main-color);
   display: flex;
   flex-direction: column;
   padding: 2rem 10em;
@@ -124,15 +129,15 @@ input {
   width: 7em;
   height: 2em;
   background-color: white;
-  color: var(--purple);
+  color: var(--tertiary-color);
   border-radius: 10px;
-  border: solid 2px var(--purple);
+  border: solid 2px var(--tertiary-color);
 }
 
 #submit:hover {
-  background-color: var(--purple);
+  background-color: var(--tertiary-color);
   cursor: grab;
-  color: white;
+  color: black;
 }
 
 .redirection {
@@ -144,17 +149,19 @@ input {
 }
 
 .redirection a {
-  background-color: var(--purple);
+  background-color: white;
+  border:  solid 2px var(--tertiary-color);
   border-radius: 10px;
   text-decoration: none;
-  color: white;
+  color: var(--tertiary-color);
   padding: 0.4em 0.6em;
   box-shadow: rgba(0, 0, 0, 0.079) 5px 5px 3.2px;
 }
 
 .redirection a:hover {
   cursor: grab;
-  color: #b1eb6f;
+  color: black;
+  background-color: var(--tertiary-color);
 }
 
 /* dashboard */
@@ -172,6 +179,11 @@ input {
   padding-top: 3rem;
 }
 
+#category-tiles {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* bills */
 
 #bill {
@@ -183,26 +195,18 @@ input {
   margin-top: 3rem;
 }
 
-/* categories */
-
 /* dashboard categories */
 
 #category-card {
   padding-top: 1rem;
-  padding-left: 2rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: end;
 }
 
-#category-tiles {
-  padding: 1rem;
-}
-
-#categories {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1rem;
+#cat-name {
+  font-weight: bolder !important;
 }
 
 /* category tab */
@@ -219,6 +223,8 @@ input {
   padding: 2rem;
 }
 
+/* tables */
+
 thead {
   background-color: #EDEDED;
 }
@@ -226,4 +232,86 @@ thead {
 th {
   font-weight: 1000;
   font-size: 20px;
+}
+
+
+.active {
+  background-color: var(--main-color);
+  padding: 0.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  #category-sum {
+    max-width: 20rem;
+  }
+
+  #myChart {
+    max-height: 60vh;
+    max-width: 60vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+
+  form {
+    margin-left: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
+    width: 80%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  form {
+      margin-left: 3rem;
+      box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
+      width: 80%;
+    }
+  
+    input {
+      width: 100%;
+    }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

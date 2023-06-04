@@ -1,5 +1,4 @@
 const seedCategories = require('./category-seeds.js');
-const seedSubcategories = require('./subcategory-seeds');
 const seedBills = require('./bill-seeds');
 const seedUsers = require('./user-seeds.js')
 
@@ -10,9 +9,6 @@ const seedAll = async () => {
     console.log('\n----- DATABASE SYNCED -----\n');
     await seedCategories();
     console.log('\n----- CATEGORIES SEEDED -----\n');
-
-    await seedSubcategories();
-    console.log('\n----- SUBCATEGORIES SEEDED -----\n');
 
     await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
