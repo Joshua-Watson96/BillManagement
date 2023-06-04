@@ -24,16 +24,6 @@ User.hasMany(Bill, {
     onDelete: 'CASCADE'
 });
 
-//Subcategory belongs to Category
-Subcategory.belongsTo(Category, {
-    foreignKey: 'category_id',
-});
-
-//Category has to many Subcategories
-Category.hasMany(Subcategory, {
-    foreignKey: 'category_id',
-});
-
 module.exports = {
     Bill,
     Category,

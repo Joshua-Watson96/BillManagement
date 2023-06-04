@@ -12,14 +12,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 
-
 </head>
 
 <body>
     <header>
-        <h1 id="header-text">Bill</h1>
+        <img id="logo" src="/images/Logo.png" alt="plus, minus, multiplicationm and division signs in a square with the text Bill Ease to the right of it"/>
     </header>
-    <nav class="nav">
+    <nav class="nav nav-pills">
         <ul id="nav-list">
             <li>
                 <!-- If the user is logged in, show a logout button -->
@@ -31,7 +30,7 @@
                 <a href="/"><i class="bi bi-house-door-fill"></i>  Login</a>
                 {{/if}}
             </li>
-            <li id = "dashboardBtn">
+            <li>
                 <a href="/dashboard"><i class="bi bi-bar-chart-fill"></i>  Dashboard</a>
             </li>
             <li>
@@ -48,14 +47,10 @@
     </main>
 </body>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
 <script>
-    document.querySelectorAll(".nav-item").forEach((ele) =>
-        ele.addEventListener("click", function (event) {
-            event.preventDefault();
-            document
-                .querySelectorAll(".nav-item")
-                .forEach((ele) => ele.classList.remove("active"));
-            this.classList.add("active")
-        })
-    );
+   $(function () {
+        $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+    });
 </script>
