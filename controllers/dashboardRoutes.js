@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Bill, Category } = require('../models');
-const sequelize = require('../config/connection');
+const moment = require('moment')
 
 //Get all categories and associated bills
 router.get('/', async (req, res) => {
@@ -28,13 +28,9 @@ router.get('/', async (req, res) => {
                 total_amount: totalAmount
             };
         });
-        console.log(categoryTotals);
 
         const categoryNames = categoryTotals.map(item => item.category_name);
         const totalAmounts = categoryTotals.map(item => item.total_amount);
-
-        console.log(categoryNames)
-        console.log(totalAmounts)
 
         const billData = await Bill.findAll({
             order: [
@@ -46,8 +42,13 @@ router.get('/', async (req, res) => {
         const bills = billData.map((bill) =>
             bill.get({ plain: true })
         );
+
+        const billDue = bills.map(item => item.due_date);
+        const dueDate = billDue.map(item => moment(item).format("Do MMM YY"))
+
+        console.log(dueDate);
     
-        res.render('dashboard', { categoryTotals, totalAmounts, categoryNames, bills});
+        res.render('dashboard', { categoryTotals, totalAmounts, categoryNames, bills, dueDate });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

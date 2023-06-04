@@ -1,6 +1,18 @@
-<section id="bill-card">
-    <h2>Bills</h2>
-    {{#each bills as |bill|}}
-    {{> bill-details}}
-    {{/each}}
+<section id="bills">
+    <section id="bill-card">
+        <h2>Upcoming Bills</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Bill</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Due Date</th>
+                </tr>
+            </thead>
+            {{#each bills as |bill|}}
+            {{> bill-details}}
+            {{/each}}
+        </table>
+
+    </section>
 </section>

@@ -1,15 +1,25 @@
-<div class="card" style="width: 30rem;">
-    {{#if bills}}
-    <div class="card-header">
-    <strong>{{category_name}}</strong>
-    </div>
-    <ul class="list-group list-group-flush">
+<div>
+    <table class="table">
+        <h4 id="category-name">{{category_name}}</h4>
+        <thead>
+            <tr>
+                <th scope="col">Bill</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Due Date</th>
+            </tr>
+        </thead>
         {{#each bills}}
-        <li class="list-group-item" id="bill">
-
-            <span>{{name}}</span> <span>${{amount}}</span> <span>Due: {{due_date}}</span>
-        </li>
+        <div>
+            <tbody>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>${{amount}}</td>
+                    <td>Due: {{due_date}}</td>
+                </tr>
+            </tbody>
+        </div>
         {{/each}}
-    </ul>
-    {{/if}}
+
+    </table>
 </div>
+

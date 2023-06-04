@@ -1,9 +1,8 @@
 <section>
-   <h1>Welcome to .. </h1>
-   <h2 class="slogan"> Streamline Your Billing Process with Ease </h2>
+   <h2 class="slogan"> Sign Up Now to Streamline Your Billing Process with Ease... </h2>
    {{!-- User Sign Up --}}
    <div class="signUp-container">
-      <form action="/login" method="POST">
+      <form action="/users/signup" method="POST" class="signup-form">
          {{!-- Prompts user to enter their name --}}
          <label for="name">Username:</label>
          <input type="text" id="name" name="name" required>
@@ -22,3 +21,5 @@
       </div>  --}}
    </div>
 </section>
+
+<script src="./js/signup.js"></script>
