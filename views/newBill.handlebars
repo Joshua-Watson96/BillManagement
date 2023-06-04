@@ -2,8 +2,10 @@
 <div = "newBill">
     <form action="/addNewBill" method="POST">
         {{!-- Prompts user to enter the name of the bill --}} 
+
         <label for="billName">What bill would you like to add?</label>
         <select id = "billNameId" required>
+
             <option value="homeVal" id="homeType">Home </option>
             <option value="insuranceVal" id="insuranceType">Insurance </option>
             <option value="personalVal" id="personalType">Personal </option>
@@ -11,17 +13,21 @@
             <option value="councilVal" id="councilType">Council </option>
         </select>
         {{!-- Prompts user to enter the type of bill --}}
+
         <label for="billType"> Select type of bill </label>
         <select id ="billTypeId" required></select>
-
-            
 
         {{!-- Prompts user to enter bill amount --}}
         <label for="billAmount">How much is the bill?</label>
         <input type = "billAmountTxt" id = "billAmountId" required>
         {{!-- Prompts user to enter bill due-date --}}
-        <label for = "billDue">What is the due-date for this bill?</label>
+        <label for = "billDue">When is the due-date for this bill?</label>
         <input type = "billDueTxt" id = "billDueId" required>
+
+        <button id="addBtn">Add</button>
+
+        <button id="clearBtn">Clear</button>
+    
         
     </form>
 <script src="../public/js/newBill.js"></script>
