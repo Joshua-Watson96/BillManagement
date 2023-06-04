@@ -7,7 +7,10 @@
   margin: 0;
   padding: 0;
   font-family: "Noto Sans", sans-serif;
+  font-size: 18px;
 }
+
+/* main.handlebars */
 
 header {
   background-color: var(--green);
@@ -34,7 +37,7 @@ header {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 10%;
+  width: 12%;
   background-color: #b1eb6f;
   height: 100%;
   position: fixed;
@@ -72,7 +75,7 @@ li:first-child {
 }
 
 main {
-  margin-left: 12%;
+  margin-left: 14%;
   margin-right: 2%;
 }
 
@@ -83,6 +86,8 @@ main {
   padding: 2rem 0 1rem 0;
   margin-top: 0.5em;
 }
+
+/* login and signup */
 
 form {
   background-color: var(--green);
@@ -152,15 +157,35 @@ input {
   color: #b1eb6f;
 }
 
-#bill {
-  display: flex;
-  justify-content: space-between;
+/* dashboard */
+
+#myChart {
+  max-height: 38vh;
+  max-width: 38vw;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+  padding: 1rem;
 }
 
 #line-break {
   border-bottom: 2px solid black;
   padding-top: 3rem;
 }
+
+/* bills */
+
+#bill {
+  display: flex;
+  justify-content: space-between;
+}
+
+#bills {
+  margin-top: 3rem;
+}
+
+/* categories */
+
+/* dashboard categories */
 
 #category-card {
   padding-top: 1rem;
@@ -170,16 +195,35 @@ input {
   justify-content: end;
 }
 
-#bill-card {
-  padding-top: 3rem;
+#category-tiles {
+  padding: 1rem;
 }
 
 #categories {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-#myChart {
-  max-height: 40vh;
-  max-width: 40vw;
+/* category tab */
+
+#category-name {
+  border-bottom: 1px solid black;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+#categories, #bills {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 5px;
+  padding: 2rem;
+}
+
+thead {
+  background-color: #EDEDED;
+}
+
+th {
+  font-weight: 1000;
+  font-size: 20px;
 }
