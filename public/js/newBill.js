@@ -73,6 +73,9 @@ for (let i = 0; i < educationBill.length; i++) {
 }
 }
 
+function saveBill(){
+  saveBtn = document.getElementById("saveBtn")
+}
 // on change in value in the dropdown box, the function is ran
 billName.onchange = getOptions;
 // runs the function

@@ -14,15 +14,14 @@
         <label for="billType"> Select type of bill </label>
         <select id ="billTypeId" required></select>
 
-            
-
         {{!-- Prompts user to enter bill amount --}}
         <label for="billAmount">How much is the bill?</label>
-        <input type = "billAmountTxt" id = "billAmountId" required>
+        <input type = "number" id = "billAmountId" required>
         {{!-- Prompts user to enter bill due-date --}}
         <label for = "billDue">What is the due-date for this bill?</label>
-        <input type = "billDueTxt" id = "billDueId" required>
-        
+        <input type = "date" id = "billDueId" required>
+        {{!-- Saves the added bill --}}
+        <button id = "saveBtn">Save bill</button>
     </form>
 <script src="../public/js/newBill.js"></script>
 </div>
