@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Bill, Category } = require('../models');
-const moment = require('moment')
+const moment = require('moment');
 
 //Get all categories and associated bills
 router.get('/', async (req, res) => {
@@ -44,11 +44,14 @@ router.get('/', async (req, res) => {
         );
 
         const billDue = bills.map(item => item.due_date);
-        const dueDate = billDue.map(item => moment(item).format("Do MMM YY"))
+        const dueDate = billDue.map(item => moment(item).format("Do MMM YYYY"))
 
-        console.log(dueDate);
+        for (let i = 0; i < bills.length; i++) {
+            bills[i].dueDate = dueDate[i];
+        }
+
     
-        res.render('dashboard', { categoryTotals, totalAmounts, categoryNames, bills, dueDate });
+        res.render('dashboard', { categoryTotals, totalAmounts, categoryNames, bills });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

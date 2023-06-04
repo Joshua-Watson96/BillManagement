@@ -1,6 +1,5 @@
 const Bill = require('./Bill');
 const Category = require('./Category');
-const Subcategory = require('./Subcategory');
 const User = require('./User');
 
 //Bill belongs to Category
@@ -27,6 +26,5 @@ User.hasMany(Bill, {
 module.exports = {
     Bill,
     Category,
-    Subcategory,
     User
 };
