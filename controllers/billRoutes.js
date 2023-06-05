@@ -4,7 +4,9 @@ const moment = require('moment');
 
 router.get('/', async (req, res) => {
     try {
+        if (req.session.logged_in) {
         const billData = await Bill.findAll({
+            where: { user_id: req.session.user_id },
             order: [
                 ["due_date", 'ASC']
             ]
@@ -19,8 +21,11 @@ router.get('/', async (req, res) => {
         for (let i = 0; i < bills.length; i++) {
             bills[i].dueDate = dueDate[i];
         }
-
+        
         res.render('bills', { bills });
+    } else {
+        res.render("noAccount")
+    }
     } catch (err) {
             console.log(err);
             res.status(500).json(err);

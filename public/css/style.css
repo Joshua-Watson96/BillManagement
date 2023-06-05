@@ -1,6 +1,6 @@
 :root {
   --main-color: #3ec1d3;
-  --seconday-color: #C7FAFF;
+  --seconday-color: #c7faff;
   --tertiary-color: #29a4b5;
 }
 
@@ -17,7 +17,7 @@ main {
   margin-top: 120px;
 }
 
-/* header */
+/* -------------------- header -------------------- */
 
 header {
   background-color: var(--main-color);
@@ -46,7 +46,7 @@ header {
   margin-top: 0.5em;
 }
 
-/* navbar */
+/* -------------------- navbar -------------------- */
 
 nav {
   z-index: 1 !important;
@@ -56,7 +56,7 @@ nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  padding-top: 5rem;
+  padding-top: 130px;
   width: 14%;
   background-color: var(--seconday-color);
   height: 100%;
@@ -92,7 +92,7 @@ li:first-child {
   margin-top: 2em;
 }
 
-/* login and signup */
+/* -------------------- login and signup -------------------- */
 
 form {
   background-color: var(--main-color);
@@ -150,7 +150,7 @@ input {
 
 .redirection a {
   background-color: white;
-  border:  solid 2px var(--tertiary-color);
+  border: solid 2px var(--tertiary-color);
   border-radius: 10px;
   text-decoration: none;
   color: var(--tertiary-color);
@@ -164,7 +164,7 @@ input {
   background-color: var(--tertiary-color);
 }
 
-/* dashboard */
+/* -------------------- dashboard -------------------- */
 
 #myChart {
   max-height: 38vh;
@@ -184,7 +184,7 @@ input {
   justify-content: space-between;
 }
 
-/* bills */
+/* -------------------- bills -------------------- */
 
 #bill {
   display: flex;
@@ -195,7 +195,7 @@ input {
   margin-top: 3rem;
 }
 
-/* dashboard categories */
+/* ---------- dashboard categories ---------- */
 
 #category-card {
   padding-top: 1rem;
@@ -209,7 +209,7 @@ input {
   font-weight: bolder !important;
 }
 
-/* category tab */
+/* -------------------- category tab -------------------- */
 
 #category-name {
   border-bottom: 1px solid black;
@@ -217,16 +217,17 @@ input {
   padding: 0.5rem;
 }
 
-#categories, #bills {
+#categories,
+#bills {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 5px;
   padding: 2rem;
 }
 
-/* tables */
+/* -------------------- tables -------------------- */
 
 thead {
-  background-color: #EDEDED;
+  background-color: #ededed;
 }
 
 th {
@@ -234,10 +235,16 @@ th {
   font-size: 20px;
 }
 
-
 .active {
   background-color: var(--main-color);
   padding: 0.3rem;
+}
+
+/* no account notice */
+#no-account {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 1em auto;
 }
 
 @media screen and (max-width: 700px) {
@@ -262,11 +269,11 @@ th {
   input {
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 992px) {
   form {
+
       margin-left: 3rem;
       box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
       width: 80%;
@@ -275,6 +282,15 @@ th {
     input {
       width: 100%;
     }
+  
+    margin-left: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
+    width: 80%;
+  }
+
+  input {
+    width: 100%;
+  }
 }
 
 .sidenav {
@@ -290,28 +306,32 @@ th {
   padding-top: 60px;
 }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+    .icon-link {
+      font-size: 0;
+    }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+    .icon-link i {
+      font-size: 1.5rem;
+      /* Adjust the size as needed */
+    }
+
+    .active {
+      background-color: var(--main-color);
+      padding: 2rem 1rem 1rem 0.2rem;
+    }
+
+    i {
+      margin-left: 1rem;
+    }
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
+

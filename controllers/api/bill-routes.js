@@ -50,4 +50,20 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+// Delete bill by id
+router.delete('/:id', async (req, res) => {
+    try {
+        const billData = await Bill.destroy({
+            where: {
+                id: req.params.id,
+            }
+        });
+
+        res.status(200).json(billData);
+        
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

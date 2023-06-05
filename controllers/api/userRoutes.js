@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Bill, User } = require('../../models');
 
 router.post('/signup', async (req, res) => {
   try {
@@ -7,7 +7,6 @@ router.post('/signup', async (req, res) => {
       name: req.body.name,
       password: req.body.password,
     });
-    console.log(userData)
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.user_id = userData.dataValues.id;
@@ -67,3 +66,20 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
+
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      include: [
+        {
+          model: Bill,
+          attributes: ['name', 'amount', 'due_date'],
+        },
+      ],
+    });
+    res.status(200).json(userData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
