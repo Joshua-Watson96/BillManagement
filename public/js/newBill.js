@@ -1,82 +1,101 @@
-// Sets the arrays for the billName dropdown value
-const homeBill = [
-  "Electricity", "Gas", "Water", "Internet"
-]
 
-const insuranceBill = [
-  "Health Insurance", "Home Insurance", "Car Insurance"
-]
+const express = require('express');
+const { doc } = require('prettier');
+const app = express();
 
-const personalBill = [
-  "Car Registration", "Phone Bill" 
-]
+app.use(express.json());
 
-const educationBill = [
-  "School Fee", "Class Excursion"
-]
+const addBtn = document.getElementById("addBtn");
 
-const councilBill = [
-  "Rates", "Dog Registration"
-]
+addBtn.addEventListener("click", function(){
+        const billType = document.getElementById("billTypeId").value // Gets the bill type
+        const billName = document.getElementById("billNameId").value; // Get the name value
+        const billAmount = document.getElementById("billAmountId").value; // Get the amount value
+        const billDueData = document.getElementById("billDueDate").value; // Get the due date value
+        
+  
+        // add selected type to back-end with id
+        let categoryId;
+        switch (billType) {
+          case "electricity":
+            categoryId = 1;
+            break;
+          case "gas":
+            categoryId = 2;
+            break;
+          case "internet":
+            categoryId = 3;
+            break;
+          case "water":
+            categoryId = 4;
+            break;
+          case "health-insurance":
+              categoryId = 5;
+            break;
+            case "home-insurance":
+              categoryId = 6;
+            break;
+            case "car-insurance":
+              categoryId = 7;
+            break;
+            case "car-rego":
+              categoryId = 8;
+            break;
+            case "phone-bill":
+              categoryId = 9;
+            break;
+            case "school-fee":
+              categoryId = 10;
+            break;
+            case "council-rates":
+              categoryId = 11;
+            break;
+            case "dog-rego":
+              categoryId = 12;
+          default:
+            categoryId = null;
+        }
+        const billData = {
+          name: billName,
+          category_id: billType,
+          amount: billAmount,
+          dueDate: billDueData,
+        }
+        console.log(billData);
 
-// sets the variables for billName and billType
-const billType = document.getElementById("billTypeId")
-const billName = document.getElementById("billNameId");
+// adds bill to db
+        fetch('/api/bills', {
+          method: 'POST',
+          body: JSON.stringify(billData),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          
+        })
+        .then(response => {
+          if (response.ok) {
+            console.log('Data saved successfully');
+          } else {
+            console.error('Failed to save data');
+          }
+        })
+        .catch(error => {
+          console.error('Error', error);
+        })
+      });
 
 
-// function to show selected options in the billType dropdown
-function getOptions() {
-billType.innerHTML = "";  
-const value = billName.value;
-const text = billName.options[billName.selectedIndex].text;
-console.log(value, text);
+// on button click; clears all the values  
+// Get a reference to the clear button
+const clearBtn = document.getElementById("clearBtn");
 
-// If home value is selected; show homeBill array
-if (value === 'homeVal'){
-for (let i = 0; i < homeBill.length; i++) {
-  console.log(homeBill[i]);
-  const optionEl = document.createElement("option")
-  optionEl.textContent = homeBill[i]
-  billType.append(optionEl)
-}
-//  if insurance value is selected; show insuranceBill array
-} else if (value === 'insuranceVal'){
-  for (let i = 0; i < insuranceBill.length; i++) {
-    const optionEl = document.createElement("option")
-    optionEl.textContent = insuranceBill[i]
-    billType.append(optionEl)
-    
-  }
-  // if personal value is selected; show personalBill array
-} else if (value === 'personalVal'){
-  for (let i = 0; i < personalBill.length; i++) {
-    const optionEl = document.createElement("option")
-    optionEl.textContent = personalBill[i]
-    billType.append(optionEl)
-    
-  }
-  // if education value is selected; show educationBill array
-} else if (value === 'educationVal'){
-for (let i = 0; i < educationBill.length; i++) {
-  const optionEl = document.createElement("option")
-  optionEl.textContent = educationBill[i]
-  billType.append(optionEl)
-}
-// if council value is selected; show councilBill array
-} else if (value === 'councilVal'){
-  for (let i = 0; i < councilBill.length; i++) {
-    const optionEl = document.createElement("option")
-    optionEl.textContent = councilBill[i]
-    billType.append(optionEl)
-    
-  }
-}
-}
+// Add a click event listener to the clear button
+clearBtn.addEventListener("click", function() {
+  // Clear the input fields
+  document.getElementById("billNameId").value = "";
+  document.getElementById("billTypeId").value = "";
+  document.getElementById("billAmountId").value = "";
+  document.getElementById("billDueId").value = "";
+});
 
-function saveBill(){
-  saveBtn = document.getElementById("saveBtn")
-}
-// on change in value in the dropdown box, the function is ran
-billName.onchange = getOptions;
-// runs the function
-getOptions();
+  
