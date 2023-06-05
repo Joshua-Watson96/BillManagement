@@ -22,16 +22,6 @@
     <nav class="nav fixed-top">
         <ul id="nav-list">
             <li>
-                <!-- If the user is logged in, show a logout button -->
-                {{#if loggedIn}}
-                <button id="home" class="btn-no-style">Home</button>
-                <button id="logout">Logout</button>
-                {{else}}
-                <!-- Otherwise, show a link to login -->
-                <a href="/"><i class="bi bi-house-door-fill"></i>  Login</a>
-                {{/if}}
-            </li>
-            <li>
                 <a href="/dashboard"><i class="bi bi-bar-chart-fill"></i>  Dashboard</a>
             </li>
             <li>
@@ -40,7 +30,14 @@
             <li>
                 <a href="/categories"><i class="bi bi-diagram-3-fill"></i>  Categories</a>
             </li>
+            <li>
+                {{#if req.session.logged_in}}
+                <button class="no-button" id="logout">Logout</button>
+                {{/if}}
+            </li>
         </ul>
+
+
     </nav>
 
     <main>

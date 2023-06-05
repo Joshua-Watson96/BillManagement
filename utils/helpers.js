@@ -38,11 +38,10 @@ getIcon = (category) => {
 };
 
 
-upcomingIcon = (category) => {
-if (category == "Home") {
-  return `<i class="bi bi-clock-fill"></i>`
+upcomingIcon = () => {
+  // return "bi bi-clock-fill"
 }
-}
+
 module.exports = {
   getIcon,
   upcomingIcon
