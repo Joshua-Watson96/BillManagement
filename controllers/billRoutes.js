@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
         for (let i = 0; i < bills.length; i++) {
             bills[i].dueDate = dueDate[i];
         }
-
+        
         res.render('bills', { bills });
     } else {
         res.render("noAccount")
