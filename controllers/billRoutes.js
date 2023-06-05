@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         for (let i = 0; i < bills.length; i++) {
             bills[i].dueDate = dueDate[i];
         }
-
+        
         res.render('bills', { bills });
     } catch (err) {
             console.log(err);
