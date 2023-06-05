@@ -1,14 +1,26 @@
-<div class="card" style="width: 30rem;">
-    {{#if bills}}
-    <div class="card-header">
-    <strong>{{upcomingIcon category_name}}</strong>    
-    <strong>{{category_name}}</strong>
-    
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item" id="bill">
-            <span>{{bills.[0].name}}</span> <span>${{bills.[0].amount}}</span> <span>Due: {{bills.[0].due_date}}</span>
-            </li>
-    </ul>
-    {{/if}}
+
+<div>
+    <table class="table">
+        <h4 id="category-name">{{category_name}}</h4>
+        <thead>
+            <tr>
+                <th scope="col">Bill</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Due Date</th>
+            </tr>
+        </thead>
+        {{#each bills}}
+        <div>
+            <tbody>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>${{amount}}</td>
+                    <td>Due: {{due_date}}</td>
+                </tr>
+            </tbody>
+        </div>
+        {{/each}}
+
+    </table>
 </div>
+

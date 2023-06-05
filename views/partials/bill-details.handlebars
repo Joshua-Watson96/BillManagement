@@ -1,28 +1,12 @@
 
-
-<section id="upcomming">   
-    <div class="card" style="width: 40rem;">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" class="bill">
-                <span class="icon">{{upcomingIcon categories.category_name}}</span>
-                <span>{{name}}</span> 
-                <span>${{amount}}</span> 
-                <span>Due: {{due_date}}</span>
-            </li>
-        </ul>
-    </div>
-</section>
-
-
-<section id="all-bills">
-    <div class="card" style="width: 40rem;">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" class="bill">
-                <span class="icon">{{getIcon categories.category_name}}</span>
-                <span>{{name}}</span> 
-                <span>${{amount}}</span>
-                <span>Due: {{due_date}}</span>
-            </li>
-        </ul>
+<section class="all-bills">
+    <div>
+            <tbody>
+                <tr>
+                    <td>{{name}}</td>
+                    <td>${{amount}}</td>
+                    <td>Due: {{dueDate}}</td>
+                </tr>
+            </tbody>
     </div>
 </section>
