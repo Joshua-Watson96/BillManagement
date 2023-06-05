@@ -1,17 +1,19 @@
 
-const express = require('express');
-const { doc } = require('prettier');
-const app = express();
+  // const express = require('express');
+  // const { doc } = require('prettier');
+  // const app = express();
 
-app.use(express.json());
+  // app.use(express.json());
 
 const addBtn = document.getElementById("addBtn");
 
-addBtn.addEventListener("click", function(){
+addBtn.addEventListener("click", function(event){
+  event.preventDefault();
+  console.log("blah blah blah");
         const billType = document.getElementById("billTypeId").value // Gets the bill type
         const billName = document.getElementById("billNameId").value; // Get the name value
         const billAmount = document.getElementById("billAmountId").value; // Get the amount value
-        const billDueData = document.getElementById("billDueDate").value; // Get the due date value
+        const billDueData = document.getElementById("billDueId").value; // Get the due date value
         
   
         // add selected type to back-end with id
@@ -55,13 +57,14 @@ addBtn.addEventListener("click", function(){
           default:
             categoryId = null;
         }
+        
         const billData = {
           name: billName,
-          category_id: billType,
+          category_id: categoryId,
           amount: billAmount,
-          dueDate: billDueData,
+          due_date: billDueData,
         }
-        console.log(billData);
+        console.log("blah blah", billData);
 
 // adds bill to db
         fetch('/api/bills', {
