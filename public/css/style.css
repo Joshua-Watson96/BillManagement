@@ -1,6 +1,6 @@
 :root {
   --main-color: #3ec1d3;
-  --seconday-color: #C7FAFF;
+  --seconday-color: #c7faff;
   --tertiary-color: #29a4b5;
 }
 
@@ -150,7 +150,7 @@ input {
 
 .redirection a {
   background-color: white;
-  border:  solid 2px var(--tertiary-color);
+  border: solid 2px var(--tertiary-color);
   border-radius: 10px;
   text-decoration: none;
   color: var(--tertiary-color);
@@ -217,7 +217,8 @@ input {
   padding: 0.5rem;
 }
 
-#categories, #bills {
+#categories,
+#bills {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 5px;
   padding: 2rem;
@@ -226,7 +227,7 @@ input {
 /* tables */
 
 thead {
-  background-color: #EDEDED;
+  background-color: #ededed;
 }
 
 th {
@@ -234,10 +235,16 @@ th {
   font-size: 20px;
 }
 
-
 .active {
   background-color: var(--main-color);
   padding: 0.3rem;
+}
+
+/* no account notice */
+#no-account {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 1em auto;
 }
 
 @media screen and (max-width: 700px) {
@@ -262,19 +269,18 @@ th {
   input {
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 992px) {
   form {
-      margin-left: 3rem;
-      box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
-      width: 80%;
-    }
-  
-    input {
-      width: 100%;
-    }
+    margin-left: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.079) 10px 10px 6px;
+    width: 80%;
+  }
+
+  input {
+    width: 100%;
+  }
 }
 
 .sidenav {
@@ -312,6 +318,10 @@ th {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
