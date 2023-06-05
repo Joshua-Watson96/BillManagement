@@ -1,25 +1,45 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+
 {{!-- New Bill Form --}}
 <div = "newBill">
-    <form action="/addNewBill" method="POST">
+    <form>
         {{!-- Prompts user to enter the name of the bill --}} 
 
-        <label for="billName">What bill would you like to add?</label>
-        <select id = "billNameId" required>
+        <label for="billName">What is the name of the bill you would like to add?</label>
+        <input id = "billNameId" required>
+        {{!-- Prompts user to select type of bill  --}}
+        <label for="billType">Please select Bill Type.</label>
+        <select id ="billTypeId" required>
 
-            <option value="homeVal" id="homeType">Home </option>
-            <option value="insuranceVal" id="insuranceType">Insurance </option>
-            <option value="personalVal" id="personalType">Personal </option>
-            <option value="educationVal" id="educationType ">Education </option>
-            <option value="councilVal" id="councilType">Council </option>
-        </select>
-        {{!-- Prompts user to enter the type of bill --}}
+            <option disabled>Home</option>
+            <option value="electricity" id="homeId">Electricity</option>
+            <option value="gas" id="homeId">Gas</option>
+            <option value="water" id="homeId">Water</option>
+            <option value="internet" id="homeId">Internet</option>
+            <option disabled>----------------</option>
+            <option disabled>Insurance</option>
+            <option value="healthInsurance" id="insuranceId">Health Insurance</option>
+            <option value="homeInsurance" id="insuranceId">Home Insurance</option>
+            <option value="carInsurance" id="insuranceId">Car Insurance</option>
+            <option disabled>----------------</option>
+            <option disabled>Personal</option>
+            <option value="carRego" id="personalId">Car Registration</option>
+            <option value="phone" id="personalId">Phone bill</option>
+            <option value="schoolFee" id="personalId">School Fee</option>
+            <option disabled>----------------</option>
+            <option disabled>Council</option>
+            <option value="councilRates" id="councilId">Council Rates</option>
+            <option value="dogRego" id="councilId">Dog Registration </option>
+        
+        </select>    
 
-        <label for="billType"> Select type of bill </label>
-        <select id ="billTypeId" required></select>
+ 
+
 
         {{!-- Prompts user to enter bill amount --}}
         <label for="billAmount">How much is the bill?</label>
-        <input type = "number" id = "billAmountId" required>
+        <input type = "text" id = "billAmountId" placeholder="$" required>
         {{!-- Prompts user to enter bill due-date --}}
         <label for = "billDue">When is the due-date for this bill?</label>
         <input type = "date" id = "billDueId" required>
