@@ -1,65 +1,48 @@
-
-import { BsFillLightbulbFill } from "react-icons/bs";
-import { BsFire } from "react-icons/bs";
-import { BsFillDropletFill } from "react-icons/bs";
-import { BsFillRouterFill } from "react-icons/bs";
-import { BsFillHeartPulseFill } from "react-icons/bs";
-import { BsFillHouseHeartFill } from "react-icons/bs";
-import { BsCarFrontFill } from "react-icons/bs";
-import { BsFillClipboardCheckFill } from "react-icons/bs";
-import { BsFillPhoneVibrateFill } from "react-icons/bs";
-import { BsFillEasel3Fill } from "react-icons/bs";
-import { BsClipboard2DataFill } from "react-icons/bs";
-import { BsCreditCardFill } from "react-icons/bs";
-
-import { BsFillClockFill } from "react-icons/bs";
-
-
 getIcon = (category) => {
-    // const category =
-    if (category === "Electricity") {
-      return `<span> ${BsFillLightbulbFill} <span>`;
-    }
-    else if (category === "Gas") {
-      return `<span> ${BsFire} <span>`;
-    }
-    else if (category === "Water") {
-      return `<span> ${BsFillDropletFill} <span>`;
-    }
-    else if (category === "Internet") {
-      return `<span> ${BsFillRouterFill} <span>`;
-    }
-     else if (category === "Health Insurance") {
-      return `<span> ${BsFillHeartPulseFill} <span>`;
-    }
-    else if (category === "Home Insurance") {
-      return `<span> ${BsFillHouseHeartFill} <span>`;
-    }
-    else if (category === "Car Insurance") {
-      return `<span> ${BsCarFrontFill} <span>`;
-    }
-    else if (category === "Car Registration") {
-      return `<span> ${BsFillClipboardCheckFill} <span>`;
-    }
-    else if (category === "Phone Bill") {
-      return `<span> ${BsFillPhoneVibrateFill} <span>`;
-    }
-    else if (category === "School Fee") {
-      return `<span> ${BsFillEasel3Fill} <span>`;
-    }
-    else if (category === "Coucil Rates") {
-      return `<span> ${BsClipboard2DataFill} <span>`;
-    }
-    else {
-        return `<span> ${BsCreditCardFill} <span>`;
-    };
+    // if (category == "Electricity") {
+    //   return `<i class="bi bi-lightbulb-fill"></i>`;
+    // }
+    // else if (category == "Gas") {
+    //   return `<i class="bi bi-fire"></i>`;
+    // }
+    // else if (category == "Water") {
+    //   return `<i class="bi bi-droplet-fill"></i>`;
+    // }
+    // else if (category == "Internet") {
+    //   return `<i class="bi bi-router-fill"></i>`;
+    // }
+    //  else if (category == "Health Insurance") {
+    //   return `<i class="bi bi-heart-pulse-fill"></i>`;
+    // }
+    // else if (category == "Home Insurance") {
+    //   return `<i class="bi bi-house-heart-fill"></i>`;
+    // }
+    // else if (category == "Car Insurance") {
+    //   return `<i class="bi bi-car-front-fill"></i>`;
+    // }
+    // else if (category == "Car Registration") {
+    //   return `<i class="bi bi-clipboard-check-fill"></i>`;
+    // }
+    // else if (category == "Phone Bill") {
+    //   return `<i class="bi bi-phone-vibrate-fill"></i>`;
+    // }
+    // else if (category == "School Fee") {
+    //   return `<i class="bi bi-easel3-fill"></i>`;
+    // }
+    // else if (category == "Coucil Rates") {
+    //   return `<i class="bi bi-clipboard-data-fill"></i>`;
+    // }
+    // else {
+    //     return `<i class="bi bi-credit-card-2-back-fill"></i>`;
+    // };
 };
 
 
-upcomingIcon = () => {
-  return `<span> ${BsFillClockFill} <span>`
+upcomingIcon = (category) => {
+if (category == "Home") {
+  return `<i class="bi bi-clock-fill"></i>`
 }
-
+}
 module.exports = {
   getIcon,
   upcomingIcon
