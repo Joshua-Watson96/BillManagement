@@ -21,6 +21,8 @@ router.get('/', async (req, res) => {
         for (let i = 0; i < bills.length; i++) {
             bills[i].dueDate = dueDate[i];
         }
+
+        console.log(bills)
         
         res.render('bills', { bills });
     } else {
