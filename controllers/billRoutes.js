@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
             bills[i].dueDate = dueDate[i];
         }
 
-        res.render('bills', { bills });
+        res.render('bills', { bills, logged_in: req.session.logged_in });
     } else {
         res.render("noAccount")
     }

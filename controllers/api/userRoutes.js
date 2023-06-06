@@ -13,6 +13,7 @@ router.post('/signup', async (req, res) => {
       req.session.name = userData.dataValues.name;
 
       res.status(200).json(userData);
+      res.render("login");
     });
   } catch (err) {
     console.log(err);
@@ -59,6 +60,7 @@ router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
+      res.render("login");
     });
   } else {
     res.status(404).end();
