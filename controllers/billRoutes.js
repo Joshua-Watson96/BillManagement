@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Bill } = require('../models');
 const moment = require('moment');
 
+// gets all bill associated with user
 router.get('/', async (req, res) => {
     try {
         if (req.session.logged_in) {

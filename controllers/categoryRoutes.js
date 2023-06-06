@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Bill, Category } = require('../models');
 
+// gets all categories associated with user
 router.get('/', async (req, res) => {
     try {
         if (req.session.logged_in) {

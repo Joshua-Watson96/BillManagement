@@ -3,7 +3,7 @@ const { Bill, Category } = require("../models");
 const moment = require("moment");
 const e = require("express");
 
-//Get all categories and associated bills
+//Get all categories and associated bills of the user 
 router.get("/", async (req, res) => {
     try {
         if (req.session.logged_in) {
@@ -57,6 +57,7 @@ router.get("/", async (req, res) => {
         bills,
         logged_in: req.session.logged_in
       });
+      // if not logged in, access to this page is prohibited
         } else {
             res.render("noAccount")
         }
