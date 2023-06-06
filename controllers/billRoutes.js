@@ -15,6 +15,8 @@ router.get('/', async (req, res) => {
             bill.get({ plain: true })
         );
 
+        console.log(bills)
+
         const billDue = bills.map(item => item.due_date);
         const dueDate = billDue.map(item => moment(item).format("Do MMM YYYY"))
 
