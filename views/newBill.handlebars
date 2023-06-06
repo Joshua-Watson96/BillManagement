@@ -5,13 +5,11 @@
 <div = "newBill">
     <form>
         {{!-- Prompts user to enter the name of the bill --}} 
-
         <label for="billName">What is the name of the bill you would like to add?</label>
         <input id = "billNameId" required>
         {{!-- Prompts user to select type of bill  --}}
         <label for="billType">Please select Bill Type.</label>
         <select id ="billTypeId" required>
-
             <option disabled>Home</option>
             <option value="electricity" id="homeId">Electricity</option>
             <option value="gas" id="homeId">Gas</option>
@@ -31,24 +29,18 @@
             <option disabled>Council</option>
             <option value="councilRates" id="councilId">Council Rates</option>
             <option value="dogRego" id="councilId">Dog Registration </option>
-        
         </select>    
 
- 
+    {{!-- Prompts user to enter bill amount --}}
+    <label for="billAmount">How much is the bill?</label>
+    <input type = "text" id = "billAmountId" placeholder="$" required>
+    {{!-- Prompts user to enter bill due-date --}}
+    <label for = "billDue">When is the due-date for this bill?</label>
+    <input type = "date" id = "billDueId" required>
 
+    <button id="addBtn">Add</button>
 
-        {{!-- Prompts user to enter bill amount --}}
-        <label for="billAmount">How much is the bill?</label>
-        <input type = "text" id = "billAmountId" placeholder="$" required>
-        {{!-- Prompts user to enter bill due-date --}}
-        <label for = "billDue">When is the due-date for this bill?</label>
-        <input type = "date" id = "billDueId" required>
-
-        <button id="addBtn">Add</button>
-
-        <button id="clearBtn">Clear</button>
-    
-        
+    <button id="clearBtn">Clear</button>
     </form>
 </div>
 
