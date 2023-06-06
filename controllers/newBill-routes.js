@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 router.get('/', (req, res) => {
   if (req.session.logged_in) {
-  res.render('newBill')
+  res.render('newBill', {logged_in: true}) 
   } else {
     res.render("noAccount")
   }
