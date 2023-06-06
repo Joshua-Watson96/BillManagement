@@ -14,7 +14,7 @@ router.post('/signup', async (req, res) => {
       req.session.name = userData.dataValues.name;
 
       res.status(200).json(userData);
-      res.render("login");
+      // res.render("login");
     });
   } catch (err) {
     console.log(err);
