@@ -74,7 +74,7 @@ li a {
 
 li a:hover {
   color: black;
-  cursor: grab;
+  cursor: pointer;
 }
 
 li {
@@ -85,11 +85,28 @@ li {
 
 li:hover {
   color: black;
-  cursor: grab;
+  cursor: pointer;
 }
 
 li:first-child {
   margin-top: 2em;
+}
+
+li:last-child {
+  border-top: solid black 2px;
+  border-radius: 0;
+}
+
+#logout {
+  padding: 0.1em 1em;
+  margin: 1.5em 0.8em;
+  border-radius: 7px;
+  border: none;
+  background-color: white;
+}
+
+#logout:hover {
+  text-decoration: underline;
 }
 
 /* -------------------- login and signup -------------------- */
@@ -136,7 +153,7 @@ input {
 
 #submit:hover {
   background-color: var(--tertiary-color);
-  cursor: grab;
+  cursor: pointer;
   color: black;
 }
 
@@ -159,7 +176,7 @@ input {
 }
 
 .redirection a:hover {
-  cursor: grab;
+  cursor: pointer;
   color: black;
   background-color: var(--tertiary-color);
 }
