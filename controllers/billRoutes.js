@@ -21,13 +21,9 @@ router.get('/', async (req, res) => {
         for (let i = 0; i < bills.length; i++) {
             bills[i].dueDate = dueDate[i];
         }
-<<<<<<< HEAD
 
         res.render('bills', { bills, logged_in: req.session.logged_in });
-=======
-        
-        res.render('bills', { bills });
->>>>>>> b53a9289ed94cdf46677c735b8b276c5a7487c4f
+
     } else {
         res.render("noAccount")
     }

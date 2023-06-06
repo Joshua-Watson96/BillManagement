@@ -28,28 +28,28 @@ addBtn.addEventListener("click", function(event){
     case "water":
       categoryId = 4;
       break;
-    case "health-insurance":
+    case "healthInsurance":
         categoryId = 5;
       break;
-      case "home-insurance":
+    case "homeInsurance":
         categoryId = 6;
       break;
-      case "car-insurance":
+    case "carInsurance":
         categoryId = 7;
       break;
-      case "car-rego":
+    case "carRego":
         categoryId = 8;
       break;
-      case "phone-bill":
+      case "phone":
         categoryId = 9;
       break;
-      case "school-fee":
+      case "schoolFee":
         categoryId = 10;
       break;
-      case "council-rates":
+      case "councilRates":
         categoryId = 11;
       break;
-      case "dog-rego":
+      case "dogRego":
         categoryId = 12;
     default:
       categoryId = null;
@@ -74,6 +74,7 @@ addBtn.addEventListener("click", function(event){
   .then(response => {
     if (response.ok) {
       console.log('Data saved successfully');
+      alert("Bill Added")
     } else {
       console.error('Failed to save data');
     }
