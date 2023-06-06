@@ -33,6 +33,9 @@
                 <a href="/categories" class="icon-link"><i class="bi bi-diagram-3-fill"></i> Categories</a>
             </li>
             <li>
+                <a href="/newBill" class="icon-link"><i class="bi bi-plus-square-fill"></i> Add Bill</a>
+            </li>
+            <li>
                 {{#if logged_in}}
                 <button id="logout" action="/users/logout" method="POST"> <i class="bi bi-person-fill"></i> Logout</button>
                 {{/if}}
@@ -48,8 +51,6 @@
     </main>
 </body>
 
-
-    <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {{#if logged_in}}
     <script src="./js/logout.js"></script>
