@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
         amount: req.body.amount,
         category_id: req.body.category_id,
         user_id: req.session.user_id,
-        // user_id: req.body.user_id
       });
       res.status(200).json(newBill);
     }

@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
         res.render('bills', { bills, logged_in: req.session.logged_in });
 
     } else {
+        // render if user is not signed in
         res.render("noAccount")
     }
     } catch (err) {
