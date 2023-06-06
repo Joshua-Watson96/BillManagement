@@ -18,9 +18,8 @@ router.get('/', async (req, res) => {
             category.get({ plain: true })
         );
 
-        console.log(categories);
-
-        res.render('categories', { categories});
+        res.render('categories', { categories, logged_in: req.session.logged_in});
+          
     } else {
         res.render("noAccount")
     }
